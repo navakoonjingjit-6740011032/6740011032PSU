@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ตารางเปรียบเทียบสินค้า</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 20px;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead th {
+        background-color: #0d6efd;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+      }
+
+      tbody th {
+        background-color: #f1f3f5;
+        text-align: left;
+        padding: 12px;
+        width: 20%;
+      }
+
+      td {
+        text-align: center;
+        padding: 12px;
+      }
+
+      th,
+      td {
+        border: 1px solid #dee2e6;
+      }
+
+      img {
+        display: block;
+        margin: 0 auto 8px;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 6px;
+        padding: 6px 12px;
+        background-color: #198754;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+      }
+
+      a:hover {
+        background-color: #146c43;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+
+      tbody tr:hover {
+        background-color: #e9f2ff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>ตารางเปรียบเทียบสมาร์ตโฟน</h1>
+
+      <table aria-label="In-depth Product Comparison">
+        <thead>
+          <tr>
+            <th scope="col">คุณสมบัติ</th>
+
+            <th scope="col" itemscope itemtype="https://schema.org/Product">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/IBM_Simon_Personal_Communicator.png/250px-IBM_Simon_Personal_Communicator.png"
+                alt="Smartphone A"
+                width="70"
+              />
+              <span itemprop="name">Smartphone A</span><br />
+              <a href="#a" aria-label="ดูรายละเอียด Smartphone A"
+                >ดูรายละเอียด</a
+              >
+            </th>
+
+            <th scope="col" itemscope itemtype="https://schema.org/Product">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Smartphone B"
+                width="70"
+              />
+              <span itemprop="name">Smartphone B</span><br />
+              <a href="#b" aria-label="ดูรายละเอียด Smartphone B"
+                >ดูรายละเอียด</a
+              >
+            </th>
+
+            <th scope="col" itemscope itemtype="https://schema.org/Product">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsOFLSnk5bvpzxVU4PTPKW32BSQop6r00QCw&s"
+                alt="Smartphone C"
+                width="70"
+              />
+              <span itemprop="name">Smartphone C</span><br />
+              <a href="#c" aria-label="ดูรายละเอียด Smartphone C"
+                >ดูรายละเอียด</a
+              >
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">ราคา</th>
+            <td itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">799</span>
+              <meta itemprop="priceCurrency" content="USD" /> USD
+            </td>
+            <td itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">599</span>
+              <meta itemprop="priceCurrency" content="USD" /> USD
+            </td>
+            <td itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">999</span>
+              <meta itemprop="priceCurrency" content="USD" /> USD
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">หน้าจอ</th>
+            <td>6.1 นิ้ว OLED</td>
+            <td>6.5 นิ้ว LCD</td>
+            <td>6.7 นิ้ว AMOLED</td>
+          </tr>
+
+          <tr>
+            <th scope="row">RAM</th>
+            <td>8 GB</td>
+            <td>12 GB</td>
+            <td>12 GB</td>
+          </tr>
+
+          <tr>
+            <th scope="row">กล้อง</th>
+            <td>12MP Dual</td>
+            <td>48MP Dual</td>
+            <td>108MP Triple</td>
+          </tr>
+
+          <tr>
+            <th scope="row">แบตเตอรี่</th>
+            <td>4000 mAh</td>
+            <td>5000 mAh</td>
+            <td>4500 mAh</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <a
+      href="../Firm.html"
+      style="
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #607d8b;
+        color: white;
+        border-radius: 8px;
+      "
+    >
+      ⬅ กลับ
+    </a>
+
+    <a
+      href="../โจทย์ผลลัพธ์/Tasks08.html"
+      style="
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 8px;
+      "
+    >
+      ดูโจทย์ผลลัพธ์
+    </a>
+  </body>
+</html>

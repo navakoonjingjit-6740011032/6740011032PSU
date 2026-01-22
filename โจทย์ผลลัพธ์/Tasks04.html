@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>โจทย์แสดงรายละเอียดสินค้า</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef1f4;
+        padding: 30px;
+      }
+
+      .box {
+        background-color: #ffffff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      pre {
+        background-color: #f4f6f8;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+
+      img {
+        width: 300px;
+        border: 2px solid #bbb;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <div class="box">
+        <h2>โจทย์ 1 : โจทย์</h2>
+      <p>
+        สร้างหน้าแสดงรายละเอียดสินค้าพร้อมฟอร์มสั่งซื้อ
+        คุณได้รับมอบหมายให้สร้างหน้าเว็บ HTML
+        ที่แสดงรายละเอียดของสินค้าชิ้นหนึ่ง
+        และมีฟอร์มสำหรับให้ลูกค้าสั่งซื้อสินค้า หน้าเว็บควรใช้โครงสร้าง HTML5
+        เชิงความหมาย (Semantic HTML5) ที่ถูกต้อง และมีองค์ประกอบฟอร์มที่หลากหลาย
+      </p>
+
+      <p><strong>สิ่งที่โจทย์ต้องการ:</strong></p>
+      <ul>
+        <li>
+          ใช้ Semantic HTML5 เช่น <code>&lt;header&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>,
+          <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>
+        </li>
+        <li>ส่วนหัวมีโลโก้ร้านค้าและแถบนำทางด้วย <code>&lt;nav&gt;</code></li>
+        <li>แสดงข้อมูลสินค้า (ชื่อ, รูป, รายละเอียด, ราคา, คะแนนรีวิว)</li>
+        <li>ใช้ <code>&lt;table&gt;</code> แสดงคุณสมบัติเพิ่มเติมของสินค้า</li>
+        <li>
+          มีฟอร์มสั่งซื้อ ใช้ <code>&lt;form&gt;</code>,
+          <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>
+        </li>
+        <li>
+          มี input อย่างน้อย 5 ประเภท และทุกช่องต้องมี
+          <code>&lt;label&gt;</code>
+        </li>
+        <li>ส่วนท้ายแสดงข้อมูลลิขสิทธิ์และลิงก์เพิ่มเติม</li>
+      </ul>
+    </div>
+
+    
+    <div class="box">
+        <h2>โจทย์ 2 : โค้ด</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Premium Wireless Headphones&lt;/title&gt;
+    &lt;style&gt;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+      }
+      header,
+      footer {
+        background: #222;
+        color: #fff;
+        padding: 1rem;
+      }
+      header img {
+        height: 40px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+      }
+      main {
+        padding: 2rem;
+        max-width: 1000px;
+        margin: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;img src="logo.png" alt="GadgetStore Logo" /&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;หน้าแรก&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;สินค้า&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;เกี่ยวกับเรา&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;ติดต่อ&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;article&gt;
+          &lt;h1&gt;Premium Wireless Headphones&lt;/h1&gt;
+          &lt;img src="headphones.jpg" alt="หูฟังไร้สายสีดำแบบครอบหู" /&gt;
+          &lt;p&gt;ราคา: ฿199.99&lt;/p&gt;
+          &lt;p&gt;คะแนนรีวิว: ⭐⭐⭐⭐☆&lt;/p&gt;
+        &lt;/article&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+      &lt;p&gt;© 2024 GadgetStore Inc.&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+  
+    <div class="box">
+        <h2>โจทย์ 3 : รูปโจทย์</h2>
+        <a href="https://i.postimg.cc/NMMjZw8q/Task4.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/NMMjZw8q/Task4.png"
+            alt="product example"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+      <div class="box">
+        <h2>โจทย์ 4 : รูปผลลัพธ์</h2>
+        <a href="https://i.postimg.cc/WpZdVsL2/Task004.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/WpZdVsL2/Task004.png"
+            alt="form example"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+    <div style="margin-top: 40px">
+        <a
+          href="../Firm.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #607d8b;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ⬅ กลับ
+        </a>
+  
+        <a
+          href="../ฝึกทำโจย์ท/Task04.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #9c27b0;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ดูโค้ดผลลัพธ์
+  </body>
+</html>

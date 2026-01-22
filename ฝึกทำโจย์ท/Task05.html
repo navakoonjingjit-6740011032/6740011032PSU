@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>แบบฟอร์มลงทะเบียนกิจกรรม</title>
+  </head>
+  <body>
+    <header>
+      <h1>แบบฟอร์มลงทะเบียนกิจกรรม</h1>
+    </header>
+
+    <main>
+      <form action="#" method="post">
+        <div>
+          <label for="fullname">ชื่อ-นามสกุล:</label>
+          <input type="text" id="fullname" name="fullname" required />
+        </div>
+
+        <div>
+          <label for="email">อีเมล:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <fieldset>
+          <legend>เพศ</legend>
+
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">ชาย</label>
+
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">หญิง</label>
+        </fieldset>
+
+        <div>
+          <label for="activity">ประเภทกิจกรรมที่สนใจ:</label>
+          <select id="activity" name="activity">
+            <option value="sports">กีฬา</option>
+            <option value="music">ดนตรี</option>
+            <option value="technology">เทคโนโลยี</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">ข้อความเพิ่มเติม / คำถาม:</label>
+          <textarea id="message" name="message" rows="4" cols="30"></textarea>
+        </div>
+
+        <div>
+          <button type="submit">ส่งข้อมูล</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 ตัวอย่างเว็บไซต์</p>
+    </footer>
+
+    <a
+      href="../Firm.html"
+      style="
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #607d8b;
+        color: white;
+        border-radius: 8px;
+      "
+    >
+      ⬅ กลับ
+    </a>
+
+    <!-- ปุ่มโจทย์ผลลัพธ์ -->
+    <a
+      href="../โจทย์ผลลัพธ์/Tasks05.html"
+      style="
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 8px;
+      "
+    >
+      ดูโจทย์ผลลัพธ์
+    </a>
+  </body>
+</html>

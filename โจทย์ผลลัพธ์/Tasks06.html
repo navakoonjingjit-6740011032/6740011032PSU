@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>โจทย์ฟอร์มสมัครสมาชิกเชิงลึก</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef1f4;
+        padding: 30px;
+      }
+
+      .box {
+        background-color: #ffffff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      pre {
+        background-color: #f4f6f8;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+
+      img {
+        width: 300px;
+        border: 2px solid #bbb;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+  
+    <div class="box">
+        <h2>โจทย์ 1 : โจทย์</h2>
+      <p>
+        สร้างฟอร์มการสมัครสมาชิกเชิงลึกพร้อมโครงสร้างข้อมูลเชิงความหมาย
+        คุณได้รับมอบหมายให้สร้างฟอร์มการสมัครสมาชิกที่มีความซับซ้อนสำหรับเว็บไซต์
+        E-commerce โดยต้องเน้นการใช้ HTML5 อย่างถูกต้องตามหลักความหมาย
+        เพิ่มความสามารถในการเข้าถึง (Accessibility) ด้วย ARIA attributes
+        และผสานรวม Microdata เพื่อปรับปรุง SEO
+      </p>
+
+      <p><strong>สิ่งที่โจทย์ต้องการ:</strong></p>
+      <ul>
+        <li>
+          ใช้ Semantic HTML5 เช่น <code>&lt;form&gt;</code>,
+          <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code>,
+          <code>&lt;label&gt;</code>
+        </li>
+        <li>
+          จัดกลุ่มข้อมูลอย่างน้อย 3 ส่วน (ข้อมูลส่วนตัว, ที่อยู่, การชำระเงิน)
+        </li>
+        <li>
+          เพิ่ม ARIA attributes เช่น <code>aria-labelledby</code>,
+          <code>aria-describedby</code>, <code>aria-required</code>,
+          <code>role</code>
+        </li>
+        <li>ผสาน Microdata (Schema.org) สำหรับข้อมูลผู้ใช้</li>
+        <li>
+          ใช้ input types ที่เหมาะสม เช่น email, tel, date, number, password
+        </li>
+        <li>
+          ใช้ client-side validation เช่น required, pattern, minlength,
+          maxlength
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="box">
+        <h2>โจทย์ 2 : โค้ด</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;แบบฟอร์มลงทะเบียนผู้ใช้&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;h1 id="form-title"&gt;แบบฟอร์มลงทะเบียน&lt;/h1&gt;
+
+      &lt;form aria-labelledby="form-title"&gt;
+        &lt;fieldset itemscope itemtype="https://schema.org/Person"&gt;
+          &lt;legend&gt;ข้อมูลส่วนตัว&lt;/legend&gt;
+
+          &lt;label for="fullname"&gt;ชื่อ-นามสกุล&lt;/label&gt;
+          &lt;input type="text" id="fullname" required minlength="3"
+            aria-required="true" itemprop="name" /&gt;
+
+          &lt;label for="email"&gt;อีเมล&lt;/label&gt;
+          &lt;input type="email" id="email" required
+            aria-required="true" itemprop="email" /&gt;
+        &lt;/fieldset&gt;
+
+        &lt;fieldset itemscope itemtype="https://schema.org/PostalAddress"&gt;
+          &lt;legend&gt;ที่อยู่&lt;/legend&gt;
+          &lt;textarea id="address" required itemprop="streetAddress"&gt;&lt;/textarea&gt;
+        &lt;/fieldset&gt;
+
+        &lt;fieldset&gt;
+          &lt;legend&gt;ข้อมูลการชำระเงิน&lt;/legend&gt;
+          &lt;input type="password" pattern="[0-9]{16}" required /&gt;
+        &lt;/fieldset&gt;
+
+        &lt;button type="submit"&gt;ส่งข้อมูล&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+
+    <div class="box">
+        <h2>โจทย์ 3 : รูปโจทย์</h2>
+        <a href="https://i.postimg.cc/G2wxLq22/Task-06.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/G2wxLq22/Task-06.png"
+            alt="advanced signup form"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+      <div class="box">
+        <h2>โจทย์ 4 : รูปผลลัพธ์</h2>
+        <a href="https://i.postimg.cc/d16kbBZR/Task-006.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/d16kbBZR/Task-006.png"
+            alt="semantic aria microdata"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+    <div style="margin-top: 40px">
+        <a
+          href="../Firm.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #607d8b;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ⬅ กลับ
+        </a>
+  
+        <a
+          href="../ฝึกทำโจย์ท/Task06.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #9c27b0;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ดูโค้ดผลลัพธ์
+  </body>
+</html>

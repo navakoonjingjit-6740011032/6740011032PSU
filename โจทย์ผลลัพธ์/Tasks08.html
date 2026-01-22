@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>โจทย์ตารางเปรียบเทียบสินค้าเชิงลึก</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #eef1f4;
+        padding: 30px;
+      }
+
+      .box {
+        background-color: #ffffff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      pre {
+        background-color: #f4f6f8;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+
+      img {
+        width: 360px;
+        border: 2px solid #bbb;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+   
+    <div class="box">
+        <h2>โจทย์ 1 : โจทย์</h2>
+      <p>
+        คุณจะต้องสร้างตารางเปรียบเทียบสินค้าที่มีความซับซ้อน โดยใช้ HTML5
+        อย่างถูกต้องตามหลักการเชิงความหมาย (Semantic HTML)
+        และเพิ่มความสามารถในการเข้าถึง (Accessibility) สำหรับผู้พิการทางสายตา
+        รวมถึงการฝัง Microdata เพื่อปรับปรุงการจัดอันดับ SEO
+      </p>
+
+      <p>
+        ตารางจะต้องสามารถแสดงข้อมูลสินค้าหลายรายการ
+        และคุณสมบัติที่หลากหลายได้อย่างชัดเจน เป็นระเบียบ
+        และสามารถอ่านได้ดีผ่านโปรแกรมอ่านหน้าจอ
+      </p>
+
+      <p><strong>สิ่งที่โจทย์ต้องการ:</strong></p>
+      <ul>
+        <li>
+          สร้างตารางเปรียบเทียบสินค้าอย่างน้อย 3 รายการ
+          และมีคุณสมบัติเปรียบเทียบอย่างน้อย 5 อย่าง (เช่น ราคา, หน้าจอ, RAM,
+          กล้อง, แบตเตอรี่)
+        </li>
+        <li>
+          ใช้ Semantic HTML5 อย่างถูกต้อง เช่น
+          <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>,
+          <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>,
+          <code>&lt;th&gt;</code>,
+          <code>&lt;td&gt;</code>
+          พร้อม <code>scope="col"</code> และ
+          <code>scope="row"</code>
+        </li>
+        <li>
+          เพิ่ม Accessibility โดยใช้ ARIA attributes เช่น
+          <code>aria-label</code>
+          สำหรับตารางและลิงก์
+        </li>
+        <li>
+          ฝัง Schema.org Microdata สำหรับข้อมูลสินค้า (<code>Product</code>)
+          และราคา (<code>Offer</code>)
+        </li>
+        <li>
+          แต่ละคอลัมน์สินค้าต้องมีรูปภาพ ชื่อสินค้า และปุ่มลิงก์ “ดูรายละเอียด”
+        </li>
+      </ul>
+    </div>
+
+  
+    <div class="box">
+        <h2>โจทย์ 2 : โค้ด</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;ตารางเปรียบเทียบสินค้า&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;main&gt;
+  &lt;h1&gt;ตารางเปรียบเทียบสมาร์ตโฟน&lt;/h1&gt;
+
+  &lt;table aria-label="In-depth Product Comparison"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;คุณสมบัติ&lt;/th&gt;
+
+        &lt;th scope="col" itemscope itemtype="https://schema.org/Product"&gt;
+          &lt;img src="phone-a.jpg" alt="Smartphone A" width="70"&gt;
+          &lt;span itemprop="name"&gt;Smartphone A&lt;/span&gt;&lt;br&gt;
+          &lt;a href="#a" aria-label="ดูรายละเอียด Smartphone A"&gt;ดูรายละเอียด&lt;/a&gt;
+        &lt;/th&gt;
+
+        &lt;th scope="col" itemscope itemtype="https://schema.org/Product"&gt;
+          &lt;img src="phone-b.jpg" alt="Smartphone B" width="70"&gt;
+          &lt;span itemprop="name"&gt;Smartphone B&lt;/span&gt;&lt;br&gt;
+          &lt;a href="#b" aria-label="ดูรายละเอียด Smartphone B"&gt;ดูรายละเอียด&lt;/a&gt;
+        &lt;/th&gt;
+
+        &lt;th scope="col" itemscope itemtype="https://schema.org/Product"&gt;
+          &lt;img src="phone-c.jpg" alt="Smartphone C" width="70"&gt;
+          &lt;span itemprop="name"&gt;Smartphone C&lt;/span&gt;&lt;br&gt;
+          &lt;a href="#c" aria-label="ดูรายละเอียด Smartphone C"&gt;ดูรายละเอียด&lt;/a&gt;
+        &lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;th scope="row"&gt;ราคา&lt;/th&gt;
+        &lt;td itemscope itemtype="https://schema.org/Offer"&gt;
+          &lt;span itemprop="price"&gt;799&lt;/span&gt;
+          &lt;meta itemprop="priceCurrency" content="USD"&gt; USD
+        &lt;/td&gt;
+        &lt;td itemscope itemtype="https://schema.org/Offer"&gt;
+          &lt;span itemprop="price"&gt;599&lt;/span&gt;
+          &lt;meta itemprop="priceCurrency" content="USD"&gt; USD
+        &lt;/td&gt;
+        &lt;td itemscope itemtype="https://schema.org/Offer"&gt;
+          &lt;span itemprop="price"&gt;999&lt;/span&gt;
+          &lt;meta itemprop="priceCurrency" content="USD"&gt; USD
+        &lt;/td&gt;
+      &lt;/tr&gt;
+
+      &lt;tr&gt;
+        &lt;th scope="row"&gt;หน้าจอ&lt;/th&gt;
+        &lt;td&gt;6.1 นิ้ว OLED&lt;/td&gt;
+        &lt;td&gt;6.5 นิ้ว LCD&lt;/td&gt;
+        &lt;td&gt;6.7 นิ้ว AMOLED&lt;/td&gt;
+      &lt;/tr&gt;
+
+      &lt;tr&gt;
+        &lt;th scope="row"&gt;RAM&lt;/th&gt;
+        &lt;td&gt;8 GB&lt;/td&gt;
+        &lt;td&gt;12 GB&lt;/td&gt;
+        &lt;td&gt;12 GB&lt;/td&gt;
+      &lt;/tr&gt;
+
+      &lt;tr&gt;
+        &lt;th scope="row"&gt;กล้อง&lt;/th&gt;
+        &lt;td&gt;12MP Dual&lt;/td&gt;
+        &lt;td&gt;48MP Dual&lt;/td&gt;
+        &lt;td&gt;108MP Triple&lt;/td&gt;
+      &lt;/tr&gt;
+
+      &lt;tr&gt;
+        &lt;th scope="row"&gt;แบตเตอรี่&lt;/th&gt;
+        &lt;td&gt;4000 mAh&lt;/td&gt;
+        &lt;td&gt;5000 mAh&lt;/td&gt;
+        &lt;td&gt;4500 mAh&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+   
+    <div class="box">
+        <h2>โจทย์ 3 : รูปโจทย์</h2>
+        <a href="https://i.postimg.cc/xC67cwbq/Task08.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/xC67cwbq/Task08.png"
+            alt="ตัวอย่างตารางเปรียบเทียบสินค้า"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+      <div class="box">
+        <h2>โจทย์ 4 : รูปผลลัพธ์</h2>
+        <a href="https://i.postimg.cc/wTr1h3d0/Task008.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/wTr1h3d0/Task008.png"
+            alt="ตัวอย่างตารางสินค้าที่รองรับการเข้าถึง"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+    <div style="margin-top: 40px">
+        <a
+          href="../Firm.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #607d8b;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ⬅ กลับ
+        </a>
+  
+        <a
+          href="../ฝึกทำโจย์ท/Task08.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #9c27b0;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ดูโค้ดผลลัพธ์
+  </body>
+</html>

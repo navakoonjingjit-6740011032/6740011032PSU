@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>โจทย์หน้าแสดงรายละเอียดสินค้า</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef1f4;
+        padding: 30px;
+      }
+
+      .box {
+        background-color: #ffffff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      pre {
+        background-color: #f4f6f8;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+
+      img {
+        width: 350px;
+        border: 2px solid #bbb;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+  
+    <div class="box">
+        <h2>โจทย์ 1 : โจทย์</h2>
+      <p>
+        คุณได้รับมอบหมายให้สร้างหน้าแสดงรายละเอียดสินค้าสำหรับร้านค้าออนไลน์
+        โดยต้องแสดงข้อมูลสินค้าอย่างครบถ้วน ใช้โครงสร้าง HTML5 ที่มีความหมายเชิง
+        Semantic และต้องคำนึงถึงการเข้าถึงของผู้ใช้งาน (Accessibility)
+        เพื่อให้ผู้พิการทางสายตาสามารถใช้งานได้อย่างมีประสิทธิภาพ
+        ผ่านโปรแกรมอ่านหน้าจอ
+      </p>
+
+      <p><strong>สิ่งที่โจทย์ต้องการ:</strong></p>
+      <ul>
+        <li>
+          สร้างส่วนแสดงข้อมูลสินค้าหลัก (ชื่อ, ราคา, คำอธิบายสั้น,
+          ปุ่มเพิ่มลงตะกร้า) โดยใช้แท็กที่เหมาะสม
+        </li>
+        <li>
+          สร้างแกลเลอรีรูปภาพสินค้าอย่างน้อย 3 รูป พร้อมรูปหลักที่มีขนาดใหญ่กว่า
+          โดยใช้ <code>&lt;figure&gt;</code>, <code>&lt;img&gt;</code> และ
+          <code>&lt;figcaption&gt;</code>
+        </li>
+        <li>
+          เพิ่มส่วนรายละเอียดสินค้า เช่น คุณสมบัติหรือข้อมูลทางเทคนิค โดยใช้
+          <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>,
+          <code>&lt;dd&gt;</code> หรือ <code>&lt;table&gt;</code>
+        </li>
+        <li>
+          สร้างส่วนแสดงความคิดเห็นจากลูกค้าอย่างน้อย 2 ความคิดเห็น
+          โดยแต่ละความคิดเห็นต้องมีชื่อผู้รีวิว คะแนน และวันที่รีวิว
+        </li>
+        <li>
+          ใช้ ARIA attributes เช่น <code>aria-label</code>,
+          <code>aria-labelledby</code>, <code>role</code> และจัดลำดับหัวข้อ
+          <code>&lt;h1&gt; - &lt;h6&gt;</code> อย่างถูกต้อง
+        </li>
+        <li>
+          ฝัง Schema.org Microdata สำหรับข้อมูลสินค้า (Product) และความคิดเห็น
+          (Review)
+        </li>
+      </ul>
+    </div>
+
+    
+    <div class="box">
+        <h2>โจทย์ 2 : โค้ด</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Accessible Product Page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;header&gt;
+  &lt;nav aria-label="Main navigation"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Products&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article itemscope itemtype="https://schema.org/Product"&gt;
+    &lt;h1 itemprop="name"&gt;Quantum Smart Watch Pro&lt;/h1&gt;
+
+    &lt;p itemprop="description"&gt;
+      สมาร์ตวอทช์ดีไซน์ทันสมัย พร้อมฟังก์ชันติดตามสุขภาพครบครัน
+    &lt;/p&gt;
+
+    &lt;p itemprop="offers" itemscope itemtype="https://schema.org/Offer"&gt;
+      ราคา: $&lt;span itemprop="price"&gt;199.99&lt;/span&gt;
+      &lt;meta itemprop="priceCurrency" content="USD"&gt;
+    &lt;/p&gt;
+
+    &lt;button aria-label="Add product to cart"&gt;เพิ่มลงตะกร้า&lt;/button&gt;
+
+    &lt;section aria-labelledby="gallery-title"&gt;
+      &lt;h2 id="gallery-title"&gt;แกลเลอรีสินค้า&lt;/h2&gt;
+
+      &lt;figure&gt;
+        &lt;img src="watch-main.jpg" alt="สมาร์ตวอทช์สีเงิน มุมมองด้านหน้า" itemprop="image"&gt;
+        &lt;figcaption&gt;ภาพหลักของสินค้า&lt;/figcaption&gt;
+      &lt;/figure&gt;
+
+      &lt;figure&gt;
+        &lt;img src="watch-side.jpg" alt="สมาร์ตวอทช์มุมด้านข้าง"&gt;
+        &lt;figcaption&gt;มุมด้านข้าง&lt;/figcaption&gt;
+      &lt;/figure&gt;
+
+      &lt;figure&gt;
+        &lt;img src="watch-back.jpg" alt="สมาร์ตวอทช์มุมด้านหลัง"&gt;
+        &lt;figcaption&gt;มุมด้านหลัง&lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/section&gt;
+
+    &lt;section aria-labelledby="spec-title"&gt;
+      &lt;h2 id="spec-title"&gt;คุณสมบัติสินค้า&lt;/h2&gt;
+      &lt;dl&gt;
+        &lt;dt&gt;หน้าจอ&lt;/dt&gt;
+        &lt;dd&gt;AMOLED 1.5 นิ้ว&lt;/dd&gt;
+        &lt;dt&gt;แบตเตอรี่&lt;/dt&gt;
+        &lt;dd&gt;ใช้งานได้สูงสุด 24 ชั่วโมง&lt;/dd&gt;
+        &lt;dt&gt;กันน้ำ&lt;/dt&gt;
+        &lt;dd&gt;ระดับ 5 ATM&lt;/dd&gt;
+      &lt;/dl&gt;
+    &lt;/section&gt;
+
+    &lt;section aria-labelledby="review-title"&gt;
+      &lt;h2 id="review-title"&gt;รีวิวจากลูกค้า&lt;/h2&gt;
+
+      &lt;article itemprop="review" itemscope itemtype="https://schema.org/Review"&gt;
+        &lt;p&gt;&lt;strong itemprop="author"&gt;Alex&lt;/strong&gt; ⭐⭐⭐⭐⭐&lt;/p&gt;
+        &lt;time datetime="2024-03-10" itemprop="datePublished"&gt;10 มีนาคม 2024&lt;/time&gt;
+        &lt;p itemprop="reviewBody"&gt;ใช้งานดีมาก ดีไซน์สวย แบตอึด&lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article itemprop="review" itemscope itemtype="https://schema.org/Review"&gt;
+        &lt;p&gt;&lt;strong itemprop="author"&gt;Sarah&lt;/strong&gt; ⭐⭐⭐⭐&lt;/p&gt;
+        &lt;time datetime="2024-03-08" itemprop="datePublished"&gt;8 มีนาคม 2024&lt;/time&gt;
+        &lt;p itemprop="reviewBody"&gt;ใช้งานง่าย ใส่สบาย&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2024 Online Shop&lt;/p&gt;
+&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <div class="box">
+        <h2>โจทย์ 3 : รูปโจทย์</h2>
+        <a href="https://i.postimg.cc/bwdvrPDR/Task-007.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/bwdvrPDR/Task-007.png"
+            alt="ตัวอย่างภาพสินค้าหลัก"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+      <div class="box">
+        <h2>โจทย์ 4 : รูปผลลัพธ์</h2>
+        <a href="https://i.postimg.cc/8ct1kXTR/Task7.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/8ct1kXTR/Task7.png"
+            alt="ตัวอย่างแกลเลอรีสินค้า"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+    <div style="margin-top: 40px">
+        <a
+          href="../Firm.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #607d8b;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ⬅ กลับ
+        </a>
+  
+        <a
+          href="../ฝึกทำโจย์ท/Task07.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #9c27b0;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ดูโค้ดผลลัพธ์
+  </body>
+</html>

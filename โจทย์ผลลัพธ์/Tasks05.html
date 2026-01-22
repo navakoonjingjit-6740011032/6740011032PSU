@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>โจทย์แบบฟอร์มลงทะเบียนกิจกรรม</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #eef1f4;
+        padding: 30px;
+      }
+
+      .box {
+        background-color: #ffffff;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 25px;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      ul {
+        margin-left: 20px;
+      }
+
+      pre {
+        background-color: #f4f6f8;
+        padding: 15px;
+        border-radius: 6px;
+        overflow-x: auto;
+      }
+
+      img {
+        width: 300px;
+        border: 2px solid #bbb;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="box">
+        <h2>โจทย์ 1 : โจทย์</h2>
+      <p>
+        สร้างแบบฟอร์มลงทะเบียนกิจกรรมออนไลน์ ผู้ใช้จะต้องสร้างหน้า HTML
+        สำหรับแบบฟอร์มลงทะเบียนเข้าร่วมกิจกรรมออนไลน์ โดยใช้แท็ก HTML
+        ที่หลากหลายเพื่อให้ได้โครงสร้างที่เหมาะสมและมีฟังก์ชันการทำงานเบื้องต้น
+      </p>
+
+      <p><strong>สิ่งที่โจทย์ต้องการ:</strong></p>
+      <ul>
+        <li>ใช้แท็ก <code>&lt;form&gt;</code> สำหรับสร้างแบบฟอร์ม</li>
+        <li>
+          มีช่องชื่อ-นามสกุล ใช้ <code>&lt;input type="text"&gt;</code> และ
+          <code>&lt;label&gt;</code>
+        </li>
+        <li>
+          มีช่องอีเมล ใช้ <code>&lt;input type="email"&gt;</code> และ
+          <code>&lt;label&gt;</code>
+        </li>
+        <li>
+          มีตัวเลือกเพศ ใช้ <code>&lt;input type="radio"&gt;</code> พร้อม
+          <code>&lt;fieldset&gt;</code> และ <code>&lt;legend&gt;</code>
+        </li>
+        <li>
+          มีตัวเลือกประเภทกิจกรรม ใช้ <code>&lt;select&gt;</code> และ
+          <code>&lt;option&gt;</code> อย่างน้อย 3 ตัวเลือก
+        </li>
+        <li>มีช่องข้อความเพิ่มเติม ใช้ <code>&lt;textarea&gt;</code></li>
+        <li>มีปุ่มส่งข้อมูล ใช้ <code>&lt;button type="submit"&gt;</code></li>
+        <li>
+          ใช้ Semantic HTML5 เช่น <code>&lt;header&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>
+        </li>
+        <li>
+          ทุกช่องต้องมี <code>label</code> เชื่อมกับ <code>id</code> และ
+          <code>for</code>
+        </li>
+        <li>กำหนด <code>required</code> ให้ช่องชื่อ-นามสกุลและอีเมล</li>
+      </ul>
+    </div>
+
+  
+    <div class="box">
+        <h2>โจทย์ 2 : โค้ด</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;แบบฟอร์มลงทะเบียนกิจกรรม&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;
+      &lt;h1&gt;แบบฟอร์มลงทะเบียนกิจกรรม&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+      &lt;form action="#" method="post"&gt;
+        &lt;div&gt;
+          &lt;label for="fullname"&gt;ชื่อ-นามสกุล:&lt;/label&gt;
+          &lt;input type="text" id="fullname" name="fullname" required /&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;label for="email"&gt;อีเมล:&lt;/label&gt;
+          &lt;input type="email" id="email" name="email" required /&gt;
+        &lt;/div&gt;
+
+        &lt;fieldset&gt;
+          &lt;legend&gt;เพศ&lt;/legend&gt;
+
+          &lt;input type="radio" id="male" name="gender" value="male" /&gt;
+          &lt;label for="male"&gt;ชาย&lt;/label&gt;
+
+          &lt;input type="radio" id="female" name="gender" value="female" /&gt;
+          &lt;label for="female"&gt;หญิง&lt;/label&gt;
+        &lt;/fieldset&gt;
+
+        &lt;div&gt;
+          &lt;label for="activity"&gt;ประเภทกิจกรรมที่สนใจ:&lt;/label&gt;
+          &lt;select id="activity" name="activity"&gt;
+            &lt;option value="sports"&gt;กีฬา&lt;/option&gt;
+            &lt;option value="music"&gt;ดนตรี&lt;/option&gt;
+            &lt;option value="technology"&gt;เทคโนโลยี&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;label for="message"&gt;ข้อความเพิ่มเติม / คำถาม:&lt;/label&gt;
+          &lt;textarea id="message" name="message" rows="4" cols="30"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;button type="submit"&gt;ส่งข้อมูล&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+      &lt;p&gt;&copy; 2026 ตัวอย่างเว็บไซต์&lt;/p&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+
+    <div class="box">
+        <h2>โจทย์ 3 : รูปโจทย์</h2>
+        <a href="https://i.postimg.cc/FzFF0XR3/Task05.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/FzFF0XR3/Task05.png"
+            alt="registration form example"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+      <div class="box">
+        <h2>โจทย์ 4 : รูปผลลัพธ์</h2>
+        <a href="https://i.postimg.cc/pLjvhLZc/Task005.png" target="_blank">
+          <img
+            src="https://i.postimg.cc/pLjvhLZc/Task005.png"
+            alt="form result example"
+            title="คลิกเพื่อดูขนาดเต็ม"
+          />
+        </a>
+      </div>
+      
+    <div style="margin-top: 40px">
+        <a
+          href="../Firm.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #607d8b;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ⬅ กลับ
+        </a>
+  
+        <a
+          href="../ฝึกทำโจย์ท/Task05.html"
+          style="
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #9c27b0;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+          "
+        >
+          ดูโค้ดผลลัพธ์
+  </body>
+</html>
